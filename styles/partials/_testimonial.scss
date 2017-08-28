@@ -1,0 +1,130 @@
+section.testimonial{
+	margin-top: 75px;
+	background: linear-gradient(60deg, #8c82ff 9%, #2bb9ff 91%);
+	.discription{
+		h4{
+			font-size: 30.95px;
+			margin:0;
+			font-weight: 400;
+			margin-top: 63px;
+			color:#ffffff;
+		}
+		p{
+			color: #ffffff;
+			margin-bottom: 30px;
+			font-weight: 300;
+		}
+	}
+}
+
+div.text_display{
+	display: flex;
+	justify-content: space-between;
+	div.text_wrapper{
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+	}
+}
+
+div.text_holder{
+	border-radius: 12px;
+	background-color: #ffffff;
+	max-width: 293px;
+	height: 226px;
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	p{
+		padding: 0 11%; 
+		margin: 0;
+		font-family: Open Sans;
+		color: #6d6d6d;
+		font-size: 13px; 
+		font-weight: 400;
+		line-height: 22.324px; 
+		text-align: center;
+		transform: scaleX(1.0005); 	
+	}
+}
+
+div.profile_holder{
+	margin-top: 36px;
+	display: flex;
+	position: relative;
+	height: 60px;
+	align-items: center;
+	p{
+		margin: 0;
+		padding-left: 20px;
+		text-align: left;
+		font-family: Open Sans;
+		color: #ffffff;
+		font-size: 14px; 
+		font-weight: 600;
+		line-height: 22px; 
+		text-align: left;
+		transform: scaleX(1.0006); 
+		&:nth-child(2){
+			font-size: 13px; 
+			font-weight: 300;
+		}
+	}
+}
+
+div.horizontal_slides{
+	margin-top: 40px;
+	padding-bottom: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	div.selected{
+		margin-right: 6px;
+		background-color: rgba(255, 255, 255, 0.5);
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		div.selected_sub{
+			border-radius: 50%;
+			background-color: rgba(255, 255, 255, 0.71);
+			width: 10px;
+			height: 10px;
+		}
+	}
+
+	div.unselected{
+		margin-right: 6px;
+		border-radius: 50%;
+		background-color: rgba(148, 197, 255, 0.5);
+		width: 11px;
+		height: 10px;
+	}
+}
+
+div.text_display{
+	@include respond_to(medium) {
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-around;
+		// flex-direction: column; !!! bugs at safari;
+		div.text_wrapper{
+			flex: 0 0 100%;
+			text-align: center;
+			&:not(:first-child){
+				margin-top: 30px;
+			}
+			div.text_holder{
+				max-width: 393px;
+			}
+		}
+
+		div.profile_holder{
+			margin-top: 16px;
+			// flex-direction: column; !!! margin 0 auto bugs at safari;
+			align-self: center;
+		}
+	}
+}

@@ -1,0 +1,196 @@
+section.our_team{
+	p{
+		color:#201f1f;
+		margin-bottom: 35px;
+	}
+}
+
+div.team{
+	display: flex;
+	justify-content: space-between;
+}
+
+div.team_cards{
+	transition: all .3s ease-in-out;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	position: relative;
+	border-radius: 8px;
+	background: #ffffff;
+	flex-basis: 289px;
+	height: 385px;
+	//linear-gradient border
+	border: 2px solid transparent;
+	background-clip: padding-box;
+	&::after{
+		position: absolute;
+		top: -2px; 
+		bottom: -2px;
+		left: -2px; 
+		right: -2px;
+		background: linear-gradient(0deg, rgba(135,133,255, 0.8), rgba(51,180,255, 0.9));
+		content: '';
+		z-index: -1;
+		border-radius: 8px;
+	}
+	img{
+		margin-top: 40px;
+	}
+	p{
+		font-family: Open Sans;
+		transform: scaleY(1.0021);
+	}
+	p.member_name{
+		color: #4f4f4f;
+		font-size: 19.96px; 
+		font-weight: 600;
+		line-height: 24px; 
+		span{
+			font-size: 13.98px; 
+			font-weight: 400;
+		}
+	}
+	p.skill{
+		margin-bottom: 80px;
+		padding: 0 15%;
+		color: #6d6d6d;
+		font-size: 12.98px;
+		font-weight: 400;
+		line-height: 22.474px;
+	}
+	&:hover{
+		z-index: 9;
+		transform: scale(1.05);
+		background: linear-gradient(90deg, rgba(135,133,255, 0.9), rgba(51,180,255, 0.8));
+		p{
+			color: #fff;
+		}
+	}
+}
+
+div.social_media{
+	position: absolute;
+	bottom: 30px;
+	right: 50%;
+	transform: translateX(50%);
+	background-color:#ffffff;
+	max-width: 192px;
+	height: 37px;
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+	border-radius: 8px;
+	i.fa-twitter{
+		padding: 0 25px;
+	}
+	i.fa-facebook{
+		padding-left: 50px;
+	}
+	i.fa-linkedin{
+		padding-right: 50px;
+	}
+}
+
+div.special{
+	transition: all .3s ease-in-out;
+	background: linear-gradient(90deg, rgba(135,133,255, 0.3), rgba(51,180,255, 0.6)), url(../assets/julia-komarova-97256.png);
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	position: relative;
+	border-radius: 8px;
+	flex-basis: 289px;
+	min-width: 260px;
+	height: 385px;
+	margin: 0 1%;
+	background-blend-mode: hard-light;
+	&:hover{
+		z-index: 9;
+		transform: scale(1.05);
+		background: white;
+		border: 2px solid transparent;
+		background-clip: padding-box;
+		&::after{
+			position: absolute;
+			top: -2px; 
+			bottom: -2px;
+			left: -2px; 
+			right: -2px;
+			background: linear-gradient(0deg, rgba(135,133,255, 0.8), rgba(51,180,255, 0.9));
+			content: '';
+			z-index: -1;
+			border-radius: 8px;
+		}
+		div.hidden{
+			display: block;
+		}
+	}
+	img{
+		height: 103px;
+		width: 103px;
+		margin-top: 40px;
+	}
+	p.member_name{
+		font-family: Open Sans;
+		color: #fff;
+		font-size: 19.96px; 
+		font-weight: 600;
+		line-height: 24px; 
+		span{
+			font-size: 13.98px; 
+			font-weight: 400;
+		}
+	}
+	p.skill{
+		font-family: Open Sans;
+		margin-bottom: 80px;
+		padding: 0 15%;
+		color: #fff;
+		font-size: 12.98px;
+		font-weight: 400;
+		line-height: 22.474px;
+	}
+}
+
+div.hidden{
+	display: none;
+}
+
+div.team{
+	@include respond_to(medium) {
+		flex-wrap: wrap;
+		div.team_cards, .special{
+			flex: 0 0 100%;
+			margin: 0 auto;
+			margin-top: 30px;
+			max-width: 360px;
+			background-position: bottom;
+		}
+		div.special{
+			background-position: bottom;
+			flex-basis: 360px;
+			flex-shrink: 1;
+		}
+		div.team_cards:first-child{
+			margin-top: 0;
+		}
+
+		div.social_media{
+			i.fa-twitter{
+				padding: 0 40px;
+			}
+			i.fa-facebook{
+				padding-left: 30px;
+			}
+			i.fa-linkedin{
+				padding-right: 30px;
+			}
+		}
+	}
+}

@@ -1,0 +1,189 @@
+header{
+	background: linear-gradient(0deg, rgba(135,133,255, 0.8), rgba(51,180,255, 0.9)), url(../assets/header_image.jpg);
+	background-repeat: repeat-x;
+	background-size: cover;
+	height: 100vh;
+}
+nav{
+	// max-width: 940px;
+	width: 100%;
+	margin: 0 auto;
+	height: 80px;
+	display: flex;
+	// position: fixed;
+	// z-index: 9;
+	// mix-blend-mode: difference;
+	ul, div{
+		flex: 1 0 auto;
+	}
+	div{
+		position: relative;
+	}
+	img{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		max-width: 101px;
+		height: 23px;
+		flex-shrink: 1;
+	}
+	.wrapper{
+		border-bottom: 1px solid #7aceff;
+	}
+	#hamburger{
+		color: #ffffff;
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+nav ul{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	list-style: none;
+}
+
+nav li{
+	flex: 1 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	font-size: 13px; 
+	font-weight: 400;
+	font-family: Open Sans;
+	&:nth-child(6){
+		padding-right: 20px;
+	}
+	&:nth-child(7){
+		flex-shrink:0;
+		flex-basis: 100px;
+	}
+	a{
+		color:#ffffff;
+		line-height: 46px;/* Approximation due to font substitution */
+		text-align: left;
+		transform: scaleX(1.0001);
+		transition: all .2s ease-in-out;
+		&:hover{
+			color: #3b5998;
+			transform: scale(1.1);
+		}
+	}
+	button{
+		margin-left: 20px;
+		font-family: Open Sans;
+		text-align: center;
+		transform: scaleX(1.0001); 
+		font-size: 12px;
+		font-weight: 400;
+		border-radius: 4px;
+		min-width: 73px;
+		height: 30px;
+		background: none;
+		transition: all .2s ease-in-out;
+		&.login{
+			color: #ffffff;
+			border-width: 2px;
+			border-color:#ffffff;
+			border-style: solid;
+		}
+		&.signup{
+			border: none;
+			color: #1ca8dd;
+			background-color:#ffffff;
+		}
+		&:hover{
+			color: #3b5998;
+			transform: scale(0.9);
+		}
+
+		@include respond_to(medium) {
+			font-size: 10px;
+		}
+	}
+}
+
+li:last-child{
+	flex-basis: 90px;
+	justify-content: flex-end;
+}
+
+header section{
+	font-family: Open Sans;
+	color: #ffffff;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	padding-bottom: 80px;
+	div{
+		margin: 0 auto;
+	}
+	h1{
+		// font-size: 50px; 
+		font-size: 50px; 
+		font-weight: 600;
+		line-height: 72.623px; 
+		transform: scaleX(1.0001); 
+		margin: 0;
+		margin-bottom: 21px;
+	}
+	p{
+		font-size: 22px;
+		font-weight: 300;
+		line-height: 32px;
+		margin:0;
+	}
+	@include respond_to(medium) {
+		h1{
+			font-size: 36px;
+		}
+		p{
+			font-size: 16px;
+		}
+	}
+}
+
+nav{
+	display: relative;
+	@include respond_to(medium) {
+		ul{
+			display: none;
+			position: absolute;
+			padding: 2%;
+			background: linear-gradient(0deg, rgba(135,133,255, 0.8), rgba(51,180,255, 0.9));
+			right: 0px;
+			top: 55px;
+			width: 60%;//minimum
+			border: 1px solid #fff;
+			border-radius: 4px;
+			z-index: 9;
+		}
+		#hamburger{
+			display: inline-block;
+			&:hover{
+				color: #3b5998;
+			}
+		}
+		//container, have to both hover ul and icon by~ or else not staying
+		ul:hover, #hamburger:hover~ul {
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			text-align: center;
+			li {
+				justify-content: center;
+				&:nth-child(6){
+					padding: 0;
+				}
+				button{
+					margin: 5px;
+				}
+			}
+		}
+	}
+}

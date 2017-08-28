@@ -1,0 +1,60 @@
+// @import url(partials/_setup.scss);
+@import "partials/setup";
+@import "partials/mixins";
+@import "partials/header";
+@import "partials/intro";
+@import "partials/price";
+@import "partials/testimonial";
+@import "partials/ourteam";
+@import "partials/whyntrial";
+@import "partials/footer";
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'Playfair Display', serif;
+}
+
+div.wrapper{
+	z-index: 8;
+	max-width: 940px;
+	margin: 0 auto; 
+	//spacing
+	@include respond_to(medium) { 
+		margin: 0 2%;
+	}
+}
+
+div.wild_wrapper{
+	max-width: 1300px;
+	margin: 0 auto; 
+	position: relative;
+	//spacing
+	@include respond_to(medium) { 
+		margin: 0 2%;
+	}
+}
+
+div.spacing{
+	@include respond_to(spacing) { 
+		margin: 0 2%;
+	}
+}
+
+div.flexContainer{display: flex;}
+
+a{text-decoration: none; color: inherit;}
+
+p {margin: 0;}
+
+i:hover{ transform: scale(1.15);}
+
+*:focus {outline:0;}
+
+/* crecdit: 
+
+//triangle shapes is inspired by  https://css-tricks.com/examples/ShapesOfCSS/
+
+//linear-gradient border is inspired by https://stackoverflow.com/questions/5706963/possible-to-use-border-radius-together-with-a-border-image-which-has-a-gradient
+
+*/

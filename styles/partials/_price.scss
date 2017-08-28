@@ -1,0 +1,177 @@
+section.get_some .discription{
+	h3{
+		margin-top: 59px;
+	}
+	p{
+		margin-bottom: 31px;
+	}
+}
+
+div.currency{
+	text-align: right;
+	font-family: Open Sans;
+	color: #b2b6b8;
+	font-size: 13.96px;
+	font-weight: 400;
+	line-height: 31.299px;
+	text-align: right;
+	a.current_currency{
+		color: #6d6d6d;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+	@include respond_to(medium) {
+		text-align: center;
+	}
+}
+
+div.plans{
+	display: flex;
+	justify-content: space-between;
+}
+
+div.plan_cards{
+	transition: all .3s ease-in-out;
+	overflow: hidden;
+	border-radius: 12px;
+	border-width: 1px;
+	border-color:#d8d7d7;
+	border-style: solid;
+	background-color:#ffffff;
+	// width: 293px;
+	height: 449px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	text-align: center;
+	flex-direction: column;
+	&:nth-child(2){
+			margin: 0 1%;
+	}
+	p{
+		font-family: Open Sans;
+		margin: 0;
+		color: #4f4f4f;
+		font-size: 13.96px; 
+		font-weight: 400;
+		line-height: 17.97px; 
+		text-align: center;
+		transform: scaleY(1.0029);
+	}
+	div.banner{
+		display: inline-block;
+		background-color: rgba(89, 158, 255, 0.2);
+		width: 292px;
+		height: 81px;
+		p{
+			line-height: 81px;
+			color: #6d6d6d;
+		}
+	}
+	p.detail{
+		color: #6d6d6d;
+		line-height: 31.299px; 
+	}
+	.price_per_month{
+		margin-top: 36px;
+		sup{
+			top:-15px;
+			right: -15px;
+		}
+		span{
+			font-family: Ubuntu; 
+			color:#14abf4;
+			font-size: 59.83px;
+			font-weight: 300;
+			line-height: 17.97px;
+		}
+		p.price_tag{
+			color:#6d6d6d;
+			font-size: 20.91px;
+			line-height: 17.97px;
+			font-weight: 300;
+		}
+	}
+	button{
+		transition: all .3s ease-in-out;
+		margin-top: 50px;
+		background: none;
+		border-radius: 5px;
+		border-width: 1px;
+		border-color: #d8d7d7;
+		border-style: solid;
+		width: 190px;
+		height: 34px;
+		font-family: Open Sans;
+		color: #949494;
+		font-size: 12.96px; 
+		font-weight: 300;
+		line-height: 17.97px; 
+		&:hover{
+			color: #3b5998;
+			transform: scale(1.09);
+		}
+	}
+}
+
+div.plan_cards:hover, div.plan_cards:focus, div.popular{
+	position: relative;
+	border-radius: 12px;
+	border-width: 1px;
+	border-color: #14abf4;
+	border-style: solid;
+	overflow: hidden;
+	// width: 293px;
+	height: 449px;
+	.pop_tag{ /* https://css-tricks.com/examples/ShapesOfCSS/*/
+		background: none;
+		border-top: 79px solid  #14abf4;
+		border-left: 79px solid transparent;
+		width: 0;
+		height: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	p.popular{
+		position: absolute; 
+		top: 4.5%; 
+		right: 0;
+		font-family: Open Sans;
+		color: #ffffff;
+		font-size: 12.98px; 
+		font-weight: 400;
+		line-height: 17.97px; 
+		text-align: center;
+		transform: matrix(0.7065,0.7073,-0.7077,0.7085,0,0); 
+	}
+	button{
+		border-radius: 5px;
+		background-color: #14abf4;
+		color: #ffffff; // #d8d7d7??
+		font-family: Open Sans;
+	}
+	div.banner{
+		background-color: rgba(20, 171, 244, 0.2);
+	}
+}
+
+div.plan_cards:hover{
+	box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.2);
+}
+
+div.plans{
+	@include respond_to(medium) {
+		flex-wrap: wrap;
+		.plan_cards{
+			margin: 0 auto;
+			margin-top: 5%;
+			flex: 0 0 100%;
+			max-width: 368px;
+		}
+		div.banner{
+			width: 100%;
+		}
+	}
+}

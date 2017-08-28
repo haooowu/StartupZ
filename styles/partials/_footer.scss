@@ -1,0 +1,133 @@
+footer{
+	background-color: #f8f8f8;
+	.footer_info{
+		padding-top: 51px;
+		display: flex;
+		justify-content: flex-start;
+		font-family: Open Sans;
+	}
+	ul{
+		list-style: none;
+		padding: 0;
+	}
+	h5{
+		margin: 0;
+		margin-bottom: 28px;
+		color: #4f4f4f;
+		font-size: 14px; 
+		font-weight: 400;
+		line-height: 22px; 
+	}
+	p, li{
+		color: #6d6d6d;
+		font-size: 13px; 
+		font-weight: 300;
+		line-height: 25.08px;
+	}
+	a:hover{
+		color: #3b5998;
+		text-decoration: underline;
+	}
+}
+
+div.company_info{
+	flex-basis: 285px;
+	margin-right: 5%;
+	div.company_media{
+		margin-top: 10px;
+		a:nth-child(1){
+			color: #225b99;
+		}
+		a:nth-child(2){
+			color: #00adf2;
+		}
+		a:nth-child(3){
+			color: #dc4d2d;
+		}
+	}
+}
+
+div.company_li_nav{
+	margin-right: calc(5% + 1.8em);
+}
+
+div.company_contact{
+	flex-basis: 275px;
+	margin-left: auto;
+	position: relative;
+	h5{
+		position: absolute;
+		left: -1.8em;
+	}
+	ul{
+		padding-top: 30px;
+	}
+	li{
+		text-indent: -1.8em;
+	}
+	li:nth-child(1):before{
+		font-family: FontAwesome;
+		content: '\f041';
+		margin-right: 11px;
+		color: rgba(175, 175, 175, 0.63);
+	}
+	li:nth-child(2):before{
+		font-family: FontAwesome;
+		content: '\f095' ;
+		margin-right: 11px;
+		color: rgba(175, 175, 175, 0.63);
+	}
+	li:nth-child(3):before{
+		font-family: FontAwesome;
+		content: '\f0e0';
+		margin-right: 11px;
+		color: rgba(175, 175, 175, 0.63);
+	}
+}
+
+div.divider{
+	background-color: #cecece;
+	max-width: 940px;
+	height: 2px;
+	margin-top: 40px;
+}
+
+div.copyright{
+	text-align: center;
+	padding: 18px 0;
+	color: #afafaf;
+	font-weight: 300;
+	line-height: 22px; /* Approximation due to font substitution */
+	p{
+		font-family: "Ubuntu";
+		font-size: 11px;
+	}
+}
+
+div.footer_info{
+	@include respond_to(medium){
+		flex-wrap: wrap;
+		*{
+			flex: 0 0 80%;
+			margin: 0 auto;
+		}
+		div.company_li_nav{
+			margin-top:40px;
+			text-align: center;
+		}
+		div.company_info{
+			text-align: center;
+		}
+		div.company_contact{
+			margin-top:40px;
+			text-align: center;
+			h5{
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			ul, li{
+				text-indent: 0;
+			}
+		}
+	}
+}
